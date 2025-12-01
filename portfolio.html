@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morgan Wojcik's Portfolio - Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script>
+      if (sessionStorage.getItem("visited")) {
+        document.documentElement.classList.add("no-animation");
+      } else {
+        sessionStorage.setItem("visited", "true");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="card">
+        <h1>Morgan Wojcik</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="nav-btn">Bio</a></li>
+            <li>
+              <a href="portfolio.html" class="nav-btn active">Portfolio</a>
+            </li>
+            <li><a href="contact.html" class="nav-btn">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Spotify-like portfolio grid placeholder -->
+      <main class="card">
+        <h2>Portfolio Grid</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="images/portfolio-1.jpg" alt="Studio recording setup" />
+            <span class="caption">Abstract Soundscapes</span>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/portfolio-2.jpg"
+              alt="Black and white guitar fretboard"
+            />
+            <span class="caption">Live Performance</span>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/portfolio-3.jpg" alt="Blue microphone closeup" />
+            <span class="caption">Studio Sessions</span>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/portfolio-4.jpg"
+              alt="Collection of vinyl records"
+            />
+            <span class="caption">Vinyl Collection</span>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/portfolio-5.jpg" alt="Acoustic guitar on chair" />
+            <span class="caption">Instrumental Focus</span>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/portfolio-6.jpg" alt="Artist with headphones" />
+            <span class="caption">Artist Portrait</span>
+          </div>
+        </div>
+      </main>
+
+      <footer class="card">
+        <div class="contact-item">
+          <div class="icon-box">✉</div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <span>client@example.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box">📞</div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <span>+1 (984) 255-5110</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box">📍</div>
+          <div class="contact-text">
+            <h4>Location</h4>
+            <span>Chapel Hill, NC</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

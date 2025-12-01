@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morgan Wojcik's Portfolio - Bio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script>
+      if (sessionStorage.getItem("visited")) {
+        document.documentElement.classList.add("no-animation");
+      } else {
+        sessionStorage.setItem("visited", "true");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="card">
+        <h1>Morgan Wojcik</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="nav-btn active">Bio</a></li>
+            <li><a href="portfolio.html" class="nav-btn">Portfolio</a></li>
+            <li><a href="contact.html" class="nav-btn">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="card bio-grid">
+        <div class="image-wrapper">
+          <img
+            src="images/bio-hero.jpg"
+            alt="Swaggy photograph of Morgan Wojcik"
+            class="hero-img"
+          />
+        </div>
+
+        <div class="bio-text">
+          <h2>Personal Bio</h2>
+          <p>
+            I'm a passionate musician with over 15 years of experience in the
+            industry. My journey began with classical training, but I've since
+            explored various genres including jazz, contemporary, and
+            experimental music.
+          </p>
+          <p>
+            Throughout my career, I've had the privilege of collaborating with
+            talented artists from around the world, performing at renowned
+            venues, and contributing to diverse musical projects that push
+            creative boundaries.
+          </p>
+          <p>
+            My approach to music is deeply rooted in authenticity and emotional
+            expression. I believe in creating sounds that resonate with
+            listeners on a personal level.
+          </p>
+          <p>
+            When I'm not making music, I enjoy mentoring emerging artists and
+            exploring new sonic landscapes.
+          </p>
+        </div>
+      </main>
+
+      <a href="portfolio.html" class="cta-btn"> ♫ Listen to my stuff </a>
+
+      <footer class="card">
+        <div class="contact-item">
+          <div class="icon-box">✉</div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <span>client@example.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box">📞</div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <span>+1 (984) 255-5110</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box">📍</div>
+          <div class="contact-text">
+            <h4>Location</h4>
+            <span>Chapel Hill, NC</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
