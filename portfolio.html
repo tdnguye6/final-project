@@ -11,12 +11,50 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script>
       if (sessionStorage.getItem("visited")) {
         document.documentElement.classList.add("no-animation");
       } else {
         sessionStorage.setItem("visited", "true");
       }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".portfolio-item");
+        const players = [];
+        items.forEach((item, index) => {
+          const audioUrl = item.getAttribute("data-audio");
+          const container = item.querySelector(".waveform-container");
+          const playBtn = item.querySelector(".play-btn");
+          const wavesurfer = WaveSurfer.create({
+            container: container,
+            waveColor: "#999",
+            progressColor: "#333",
+            cursorColor: "transparent",
+            barWidth: 3,
+            barRadius: 3,
+            responsive: true,
+            height: 80,
+            normalize: true,
+          });
+          wavesurfer.load(audioUrl);
+          players.push(wavesurfer);
+          playBtn.addEventListener("click", () => {
+            wavesurfer.playPause();
+          });
+          wavesurfer.on("play", () => {
+            playBtn.textContent = "⏸";
+            players.forEach((p) => {
+              if (p !== wavesurfer) p.pause();
+            });
+          });
+          wavesurfer.on("pause", () => {
+            playBtn.textContent = "▶";
+          });
+        });
+      });
     </script>
   </head>
   <body>
@@ -33,44 +71,59 @@
           </ul>
         </nav>
       </header>
-
-      <!-- Spotify-like portfolio grid placeholder -->
       <main class="card">
-        <h2>Portfolio Grid</h2>
+        <h2>Portfolio Grid (ordered by most recent)</h2>
         <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <img src="images/portfolio-1.jpg" alt="Studio recording setup" />
-            <span class="caption">Abstract Soundscapes</span>
+          <div class="portfolio-item" data-audio="audio/Natalie.mp3">
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Alternative Work</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
-          <div class="portfolio-item">
-            <img
-              src="images/portfolio-2.jpg"
-              alt="Black and white guitar fretboard"
-            />
-            <span class="caption">Live Performance</span>
+          <div
+            class="portfolio-item"
+            data-audio="audio/Keys to the Buick V.mp3"
+          >
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Alternative Work</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio-3.jpg" alt="Blue microphone closeup" />
-            <span class="caption">Studio Sessions</span>
+          <div
+            class="portfolio-item"
+            data-audio="audio/200 Station House Way.mp3"
+          >
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Alternative Work</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
-          <div class="portfolio-item">
-            <img
-              src="images/portfolio-4.jpg"
-              alt="Collection of vinyl records"
-            />
-            <span class="caption">Vinyl Collection</span>
+          <div class="portfolio-item" data-audio="audio/Saint Lucia.mp3">
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Electronica</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio-5.jpg" alt="Acoustic guitar on chair" />
-            <span class="caption">Instrumental Focus</span>
+          <div class="portfolio-item" data-audio="audio/Satin II.mp3">
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Misc</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
-          <div class="portfolio-item">
-            <img src="images/portfolio-6.jpg" alt="Artist with headphones" />
-            <span class="caption">Artist Portrait</span>
+          <div class="portfolio-item" data-audio="audio/Kasey's Song.mp3">
+            <div class="waveform-container"></div>
+            <div class="player-controls">
+              <span class="caption">Alternative Work</span>
+              <button class="play-btn">▶</button>
+            </div>
           </div>
         </div>
       </main>
-
       <footer class="card">
         <div class="contact-item">
           <div class="icon-box">✉</div>
